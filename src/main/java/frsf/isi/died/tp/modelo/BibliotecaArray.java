@@ -5,6 +5,7 @@ import java.util.Collection;
 
 import frsf.isi.died.tp.modelo.productos.Libro;
 import frsf.isi.died.tp.modelo.productos.MaterialCapacitacion;
+import frsf.isi.died.tp.util.ListaServiceRadix;
 
 
 /**
@@ -29,7 +30,9 @@ public class BibliotecaArray implements Biblioteca{
 	private Integer cantidadMaterial;
 	
 	// TODO 12: crear una variable de tipo ListaService que apuntará a una instancia del servicio de operaciones de lista
-
+	ListaServiceRadix lista;
+	
+	
 	
 	public BibliotecaArray() {
 		cantidadMaterial=0;
@@ -37,6 +40,7 @@ public class BibliotecaArray implements Biblioteca{
 		cantVideos=0;
 		this.materialCapacitacion= new MaterialCapacitacion[5];
 		// TODO 13: inicializar la variable de tipo ListaService para que apunte el servicio de operaciones de listas		
+		lista = new ListaServiceRadix(materialCapacitacion);
 	}
 
 	@Override
@@ -88,6 +92,7 @@ public class BibliotecaArray implements Biblioteca{
 	@Override
 	public void imprimir() {		
 		//TODO 14: invocar al método imprimir de la variable de tipo ListaService para que imprima el arreglo 
+		lista.imprimir();
 		
 	}
 		
@@ -95,6 +100,7 @@ public class BibliotecaArray implements Biblioteca{
 	@Override
 	public void ordenarPorPrecio(Boolean b) {
 		// TODO 15: invocar al metodo ordenar de la variable de tipo ListaService para que ordene el arreglo 
+		lista.ordenar();
 	}
 
 

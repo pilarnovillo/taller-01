@@ -21,7 +21,7 @@ import frsf.isi.died.tp.util.Ordenable;
 		* 3. Novillo Saravia, Pilar
 		* URL:  https://github.com/Juano187/taller01.git
 	 */
-public abstract class MaterialCapacitacion {
+public abstract class MaterialCapacitacion implements Ordenable {
 	
 	protected Integer id;
 	/**
@@ -128,5 +128,12 @@ public abstract class MaterialCapacitacion {
 	}
 	
 	// TODO 10: implementar Ordenable
+	// Funciona porque a pesar de que el metodo precio() es abtracto en MaterialCapacitacion esta implementado 
+	// en las subclases Libro y Video
+	final public int valor() {
+		int p = (this.precio()).intValue();
+		return p;
+	}
+	
 
 }
